@@ -1,15 +1,24 @@
 .new-expense {
-    background-color: rgba(238, 1, 206, 0.966);
+  background-color: #393979;
+
+color: rgb(255, 255, 255);
     padding: 1rem;
     margin: 2rem auto;
     width: 50rem;
     max-width: 95%;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-   
   }
+.new-expense:hover {
+  box-shadow: #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px;
 
+  transition: .5s;
+
+}
+.new-expense:not(:hover) {
+  transition: .5s;
+
+}
   
   .new-expense button {
     font: inherit;

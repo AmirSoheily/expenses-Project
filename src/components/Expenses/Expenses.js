@@ -4,14 +4,19 @@ import "./Expenses.css";
 import Card from "../Card/Card";
 import ExpensesFilter from "../ExpensesFilter.jsx/ExpensesFIlter";
 export default function Expenses({ expenses }) {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("All");
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
 
   const filteredExpenses = expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === filteredYear;
+    debugger;
+    if (filteredYear.toLowerCase?.() === "all") {
+      return expense;
+    }
+    expense.date = new Date(expense?.date);
+    return expense.date?.getFullYear().toString() === filteredYear;
   });
 
   return (
@@ -25,12 +30,7 @@ export default function Expenses({ expenses }) {
           <p>no expnses found</p>
         ) : (
           filteredExpenses.map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
+            <ExpenseItem key={expense.id} expense={expense} />
           ))
         )}
       </Card>

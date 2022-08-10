@@ -4,8 +4,23 @@
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background-color: #112031;
+    box-shadow: none;
+
   }
+  .expense-item:hover {
+  
+   box-shadow: #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px, #256d8565  3px 3px 5px 5px;
+   margin-right: .3rem;
+   margin-left: .3rem;
+   transition: .3s;
+
+  }
+  .expense-item:not(:hover) {
+  
+    transition: .3s;
+ 
+   }
   
   .expense-item__description {
     display: flex;
@@ -49,6 +64,8 @@
   
     .expense-item__price {
       font-size: 1.25rem;
+      background-color: #064663;
       padding: 0.5rem 1.5rem;
     }
   }
+ 
