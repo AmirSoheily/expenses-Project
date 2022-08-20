@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { ExpensesContext } from "../../App";
 import { ExpensesItems } from "../../Constant/Constant";
+import { ExpensesContext } from "../../Pages/Expense/ExpensePage";
 import "./ExpenseForm.css";
 
 export const ExpenseForm = ({ Data, handleClose }) => {
@@ -89,6 +89,7 @@ export const ExpenseForm = ({ Data, handleClose }) => {
           <input
             type="number"
             value={enterAmount}
+            required
             onChange={AmountChangeHandller}
           />
         </div>

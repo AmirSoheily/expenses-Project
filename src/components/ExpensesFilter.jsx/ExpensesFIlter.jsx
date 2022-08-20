@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import Iconify from "../Iconify/Iconify";
 import { NewExpense } from "../NewExpense/NewExpense";
 import "./ExpensesFIlter.css";
@@ -9,10 +9,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ExpensesFilter = (props) => {
-  const [open, setOpen] = useState(false);
+const ExpensesFilter = ({ open, setOpen, onChangeFilter, selected }) => {
   const dropdownChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+    onChangeFilter(event.target.value);
   };
   function handleClose() {
     setOpen(false);
@@ -66,7 +65,7 @@ const ExpensesFilter = (props) => {
           <label style={{ display: "block" }}>Filter by year</label>
           <select
             style={{ height: "35px" }}
-            value={props.selected}
+            value={selected}
             onChange={dropdownChangeHandler}
           >
             <option value="ALL">ALL</option>

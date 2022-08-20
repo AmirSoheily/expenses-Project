@@ -3,15 +3,16 @@ import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./Expenses.css";
 import Card from "../Card/Card";
 import ExpensesFilter from "../ExpensesFilter.jsx/ExpensesFIlter";
+import { Button } from "@mui/material";
+import { TotalAmount } from "../TotalAmount/TotalAmount";
 export default function Expenses({ expenses }) {
   const [filteredYear, setFilteredYear] = useState("All");
-
+  const [open, setOpen] = useState(false);
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
 
   const filteredExpenses = expenses.filter((expense) => {
-    debugger;
     if (filteredYear.toLowerCase?.() === "all") {
       return expense;
     }
@@ -22,12 +23,25 @@ export default function Expenses({ expenses }) {
   return (
     <div>
       <Card className="expenses">
+        <div>
+          <TotalAmount />
+        </div>
         <ExpensesFilter
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
+          open={open}
+          setOpen={setOpen}
         />
         {filteredExpenses.length === 0 ? (
-          <p>no expnses found</p>
+          <div style={{ textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="info"
+              onClick={() => setOpen(true)}
+            >
+              no expnses found
+            </Button>
+          </div>
         ) : (
           filteredExpenses.map((expense) => (
             <ExpenseItem key={expense.id} expense={expense} />

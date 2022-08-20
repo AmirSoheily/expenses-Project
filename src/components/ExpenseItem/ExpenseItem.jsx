@@ -4,15 +4,12 @@ import React, { useState, useContext } from "react";
 import ExpenseDate from "../ExpensesDate/ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../Card/Card";
-import { ExpenseContext } from "../Expenses/Expenses";
 import { Dialog, DialogContent, DialogTitle } from "@mui/material";
 import { NewExpense } from "../NewExpense/NewExpense";
-import { ExpensesContext } from "../../App";
 import { ExpensesItems } from "../../Constant/Constant";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import Iconify from "../Iconify/Iconify";
 import Slide from "@mui/material/Slide";
+import { ExpensesContext } from "../../Pages/Expense/ExpensePage";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });

@@ -2,7 +2,6 @@ import React from "react";
 import "./ExpenseDate.css";
 
 export default function ExpenseDate({ date }) {
-  debugger;
   date = date && new Date(date);
   const year = date && date.getFullYear();
   const month = date.toLocaleString("en-US", { month: "long" });
