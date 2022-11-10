@@ -3,7 +3,7 @@ import ExpensePage from "../../Pages/Expense/ExpensePage";
 import Footer from "../Footer/Footer";
 import VerticalMenu from "./VerticalMenu";
 import { Routes, Route } from "react-router-dom";
-import Home from "../../Pages/Home/Home";
+import {Home} from "../../Pages/Home/Home";
 const Layout = () => {
   return (
     <>

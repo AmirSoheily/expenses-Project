@@ -5,6 +5,7 @@ import Card from "../Card/Card";
 import ExpensesFilter from "../ExpensesFilter.jsx/ExpensesFIlter";
 import { Button } from "@mui/material";
 import { TotalAmount } from "../TotalAmount/TotalAmount";
+import ExpensesChart from "../Chart/ExpensesChart";
 export default function Expenses({ expenses }) {
   const [filteredYear, setFilteredYear] = useState("All");
   const [open, setOpen] = useState(false);
@@ -23,9 +24,19 @@ export default function Expenses({ expenses }) {
   return (
     <div>
       <Card className="expenses">
+
+
+
+
+
         <div>
           <TotalAmount />
         </div>
+        <div>
+<ExpensesChart expenses={filteredExpenses}/>
+
+
+</div>
         <ExpensesFilter
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}

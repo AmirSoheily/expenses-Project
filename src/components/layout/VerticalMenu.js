@@ -9,12 +9,12 @@ const VerticalMenu = () => {
       <input type="checkbox" id="active" checked={isOpen} />
       <label
         for="active"
-        class="menu-btn"
+        className="menu-btn"
         onClick={() => setIsOpen((pervious) => !pervious)}
       >
         <Iconify icon={"line-md:menu-fold-left"} />
       </label>
-      <div class="wrapper">
+      <div className="wrapper">
         <ul>
           <li>
             <Link to={"/"} onClick={() => setIsOpen(false)}>

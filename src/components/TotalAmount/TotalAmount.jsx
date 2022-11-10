@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Amount } from "./Amount";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+// import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 const Local_Storage_key = "Amount.Total";
 export const TotalAmount = () => {
   const [values, setvalue] = useState("");
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState("");
   useEffect(() => {
     const TotalValue = localStorage.getItem(Local_Storage_key);
     if (TotalValue) {
@@ -25,14 +25,28 @@ export const TotalAmount = () => {
 
     if (values) {
       setAmount(valcal);
-      localStorage.setItem(Local_Storage_key, JSON.stringify(valcal));
+      localStorage.setItem(Local_Storage_key, JSON.parse(valcal));
     }
   };
-
+  const RefAmount = () => {
+    let val = values;
+    let precvalues = amount;
+    const ref = parseInt(precvalues) - parseInt(val);
+    if (values) setAmount(ref);
+    localStorage.setItem(Local_Storage_key, JSON.parse(ref));
+  };
   return (
     <>
       <Amount value={amount} />{" "}
       <div>
+        <div>
+          <button onClick={RefAmount}>Ref amount</button>
+          <input
+            onChange={(e) => setvalue(e.target.value)}
+            value={values === amount ? 0 : values}
+          ></input>
+        </div>
+
         <div>TotalAmount</div>
         <button onClick={GetAmount}>Add Amount</button>
       </div>
@@ -47,8 +61,3 @@ export const TotalAmount = () => {
     </>
   );
 };
-// const amountTO = [
-//   {
-//     amount: "",
-//   },
-// ];

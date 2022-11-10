@@ -50,7 +50,7 @@ export const ExpenseForm = ({ Data, handleClose }) => {
       const ExpenseData = {
         id: Math.random().toString(),
         title: enterTitle,
-        amount: enterAmount,
+        amount: +enterAmount,
         date: new Date(enterDate),
       };
       const perviousExpenses = JSON.parse?.(

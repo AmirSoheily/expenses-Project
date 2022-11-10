@@ -29,6 +29,8 @@ top: 0;
 }
 .header{
   display: list-item;
+  z-index: 1999;
+
 }
 
 
@@ -40,6 +42,7 @@ top: 0;
   right: 0;
   height: 100%;
   width: 18%;
+  z-index: 2000;
   /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
  /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
@@ -53,7 +56,8 @@ top: 0;
 }
 .menu-btn{
   position: absolute;
-  z-index: 2;
+  z-index: 2001;
+
   right: 20px;
   /* left: 20px; */
   top: 20px;
